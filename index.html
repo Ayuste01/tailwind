@@ -1,11 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+      :root {
+        --background:#ffeeff;
+        --foregroound: #113311;
+      }
+      .dark{
+        --background: #113311;
+        --foregrounf: #ffeeff;
+      }
+
+      @theme {
+        --color-background: var(--background);
+        --color-foreground: var(--foreground);
+      }
+
+    </style>
+  </head>
+  <body class="bg-background text-foreground ">
+    <header class="flex justify-between border-b p-2">
+      <div class="h-32 w-32">Hello world!</div>
+      <button onclick="cambiarTema()"
+        class="w-[100px] h-[100px] bg-orange-300 rounded cursor-pointer hover:bg-orange-500"
+      >
+        Claro
+      </button>
+    </header>
+    <!-- <div class="flex-center flex gap-4 items-center">
+      <div class="w-64 h-64 border-2 border-solid bg-yellow-300"></div>
+      <div class="w-64 h-[400px] border-2 border-solid bg-yellow-300 "></div>
+      <div class="w-64 h-64 border-2 border-solid bg-yellow-300"></div>
+    </div> -->
+
+    <script>
+        function cambiarTema(){
+            document.documentElement.classlist.toggle("dark")
+        }
+        
+    </script>
+  </body>
 </html>
